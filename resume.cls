@@ -14,7 +14,7 @@
 % notice and this notice are preserved. This file is offered as-is,
 % without any warranty.
 %
-% Created by Trey Hunner and modified by www.LaTeXTemplates.com
+% Created by Trey Hunner and modified by Nick Breitling.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -30,9 +30,9 @@
 
 \setlength{\parskip}{1pt} % reduce paragraph spacing
 
-% ----------------------------------------------------------------------------------------
+% -------------------------------------------------------------
 %	HEADINGS COMMANDS: Commands for printing name and address
-% ----------------------------------------------------------------------------------------
+% -------------------------------------------------------------
 
 \def \name#1{\def\@name{#1}} % Defines the \name command to set name
 \def \@name {} % Sets \@name to empty by default
@@ -46,14 +46,14 @@
 
 % \address command can be used to set the first, second, and third address (last 2 optional)
 \def \address #1{
-	\@ifundefined{@addresstwo}{
-		\def \@addresstwo {#1}
-	}{
-		\@ifundefined{@addressthree}{
-			\def \@addressthree {#1}
-		}{
-			\def \@addressone {#1}
-		}}
+  \@ifundefined{@addresstwo}{
+    \def \@addresstwo {#1}
+  }{
+    \@ifundefined{@addressthree}{
+      \def \@addressthree {#1}
+    }{
+      \def \@addressone {#1}
+    }}
 }
 
 % \printaddress is used to style an address line (given as input)
@@ -68,77 +68,54 @@
 
 % \printname is used to print the name as a page header
 \def \printname {
-	\begingroup
-	\hfil{\namesize\bf \@name}\hfil
-	\nameskip\break
-	\endgroup
+  \begingroup
+  \hfil{\namesize\bf \@name}\hfil
+  \nameskip\break
+  \endgroup
 }
 
-% ----------------------------------------------------------------------------------------
+% ---------------------------
 %	PRINT THE HEADING LINES
-% ----------------------------------------------------------------------------------------
+% ---------------------------
 
 \let\ori@document=\document
 \renewcommand{\document}{
-	\ori@document  % Begin document
-	\printname % Print the name specified with \name
-	\@ifundefined{@addressone}{}{ % Print the first address if specified
-		\printaddress{\@addressone}}
-	\@ifundefined{@addresstwo}{}{ % Print the second address if specified
-		\printaddress{\@addresstwo}}
-	\@ifundefined{@addressthree}{}{ % Print the third address if specified
-		\printaddress{\@addressthree}}
+  \ori@document  % Begin document
+  \printname % Print the name specified with \name
+  \@ifundefined{@addressone}{}{ % Print the first address if specified
+    \printaddress{\@addressone}}
+  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
+    \printaddress{\@addresstwo}}
+  \@ifundefined{@addressthree}{}{ % Print the third address if specified
+    \printaddress{\@addressthree}}
 }
 
-% ----------------------------------------------------------------------------------------
+% ----------------------
 %	SECTION FORMATTING
-% ----------------------------------------------------------------------------------------
+% ----------------------
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
-	\sectionskip
-	\MakeUppercase{\bf #1} % Section title
-	\sectionlineskip
-	\hrule % Horizontal line
-	\vspace{5pt}
-	\begin{list}{}{ % List for each individual item in the section
-			\setlength{\leftmargin}{1.5em} % Margin within the section
-		}
-		\item[]
-		      }{
-	\end{list}
-}
-
-% ----------------------------------------------------------------------------------------
-% SUBSECTION FORMATTING
-% ----------------------------------------------------------------------------------------
-
-\newcommand{\rEntry}[4]{
-	{\bf{#1}}{, #2} \hfill {\em #3 - #4}
+  \sectionskip
+  \MakeUppercase{\bf #1} % Section title
+  \sectionlineskip
+  \hrule % Horizontal line
+  \vspace{5pt}
+  % List for each individual item in the section
+  \begin{list}{}{
+      % margin within the section
+      \setlength{\leftmargin}{1.5em}
+    }
+    \item[]
+          }{
+  \end{list}
 }
 
 \newenvironment{rItem}[4]{
-	{\bf{#1}}{, #2} \hfill {\em #3 - #4}
-	\begin{itemize}
-		}{
-	\end{itemize}
-}
-
-% ----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE FORMATTING
-% ----------------------------------------------------------------------------------------
-
-\newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
-{\bf #1} \hfill {#2} % Bold company name and date on the right
-\ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-\\
-{\em #3} \hfill {\em #4} % Italic job title and location
-}\smallskip
-\begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
-	\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-	}{
-\end{list}
-\vspace{0.5em} % Some space after the list of bullet points
+  {\bf{#1}}{, #2} \hfill {\em #3 - #4}
+  \begin{itemize}
+    }{
+  \end{itemize}
 }
 
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
