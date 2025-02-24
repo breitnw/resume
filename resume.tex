@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ==============================================
+% | PACKAGES AND OTHER DOCUMENT CONFIGURATIONS |
+% ==============================================
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Nicholas W. Breitling}
+\address{744 Applewood Cir., Victoria, MN 55386}
+\address{(+1) 952-905-4220 \\ breitnw@u.northwestern.edu}
+
+\begin{document}
+
+% =====================
+% | EDUCATION SECTION |
+% =====================
+
+\begin{rSection}{Education}
+  \begin{rItem}{Northwestern University}{Evanston, IL}{Sep. 2024}{Present}
+    \item GPA: 4.0/4.0
+    \item Coursework: Programming Languages, Data Structures and Algorithms, Computer Systems
+  \end{rItem}
+
+  \begin{rItem}{Northeastern University}{Boston, MA}{Sep. 2024}{Present}
+    \item GPA: 4.0/4.0
+    \item Coursework: Accel. Fundamentals of Computer Science 1 and 2, Accel. Discrete Structures, Intensive Math Reasoning, Logic \& Computation
+  \end{rItem}
+
+  \begin{rItem}{Minnetonka High School}{Minnetonka, MN}{Sep. 2019}{Jun. 2024}
+    \item GPA: 4.615 (W), 4.0 (UW); ACT: 36
+    \item Coursework: AP CS A, AP CS Principles, Calculus 1-4, Linear Algebra
+    \item Awards: National Merit Scholarship Award, Dartmouth Alumni Club Book Award, AP Scholar with Distinction, Summa Cum Laude
+  \end{rItem}
+\end{rSection}
+
+% =========================
+% | RESEARCH AND PROJECTS |
+% =========================
+
+\begin{rSection}{Research \& Projects}
+  % PRL-PRG research
+  \begin{rItem}{Research Assistant}{Programming Research Laboratory Prague}{Jan. 2024}{Sep. 2024}
+    \item Collaborated on the development of a new infrastructure for just-in-time compilation of the R programming language
+    \item Aided in transition from C++ to a Java compile server, focusing specifically on RDS serialization
+    \item After completion of RDS writer, integrated serialization system as a communication protocol between C++ frontend and
+    Java backend, enabling comprehensive integration testing via package compilation  \end{rItem}
+
+  % Minnetonka Research
+  \begin{rItem}{Independent Researcher}{Minnetonka Research}{Sep. 2022}{May 2023}
+    \item Project title: {\em Improving sphere blending performance for fluid simulation applications using ray-marched rendering}
+    \item Worked with Vulkan to develop ray-marched and mesh rendering engines, utilizing a smooth-min distance field and a marching-cubes algorithm, respectively, for sphere blending.
+    \item Compared performance metrics for both algorithms, highlighting efficiency of ray-marching
+    \item Twin Cities Regional Science Fair: awarded blue ribbon (first place in Systems Software category), purple ribbon (advancement to State), and Stockholm Junior Water Prize
+  \end{rItem}
+\end{rSection}
+
+% ======================
+% | EXPERIENCE SECTION |
+% ======================
+
+\begin{rSection}{Experience}
+  % Humanity Alliance volunteering
+  \begin{rItem}{Project Lead}{The Humanity Alliance}{May 2021}{May 2023}
+    \item Service internship with the Humanity Alliance, non-profit delivering 9,000 meals/wk to food-insecure families
+    \item Developed and programmed a full-stack, user-friendly dashboard to streamline integration of meal requests and delivery data with an interactive map, greatly reducing manual entry time by automating route calculation and assignment
+    \item Maintained communication with organization leadership to address needs for  administration, user permissions and security
+  \end{rItem}
+
+  % CodeNinjas
+  \begin{rItem}{Camp Counselor (``Sensei'')}{Code Ninjas}{Summers 2021}{2023}
+    \item Lead counselor for weekly camps throughout summer. Provided one-on-one and presentational instruction to guide campers through curriculum and difficult concepts related to programming and application development
+    \item Planned and implemented supplemental lessons in Lua and Scratch programming, 3D modeling, music distribution, and more, fostering an engaging environment for advanced campers
+  \end{rItem}
+\end{rSection}
+
+% ====================
+% | EXTRACURRICULARS |
+% ====================
+
+\begin{rSection}{Activities}
+  % --copy and paste this region  if you need more--
+  {\bf Title of the activities}{, institution associated with it} \hfill {\em start date- end date}\\
+  description of the activities\\\\
+  % --copy and paste this region  if you need more--
+\end{rSection}
+
+% ==================
+% | SKILLS SECTION |
+% ==================
+
+\begin{rSection}{Skills}
+  {\bf Programming Languages and Frameworks }
+  \\list whatever programming skills you have\\\\
+  {\bf Languages}
+  \\languages
+\end{rSection}
+
+
+
+\begin{rSection}{Awards and Scholarships}
+  {\bf Name of awrd/scholarship}{ , institution associated with the award
+  } \hfill{\em date awarded}
+  \\description of the award/scholarship\\
+
+\end{rSection}
+
+\end{document}
