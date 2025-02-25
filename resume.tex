@@ -35,7 +35,7 @@
 
   \begin{rItem}{Northeastern University}{Boston, MA}{Sep. 2024}{Present}
     \item GPA: 4.0/4.0
-    \item Coursework: Accel. Fundamentals of Computer Science 1 and 2, Accel. Discrete Structures, Intensive Math Reasoning, Logic \& Computation
+    \item Coursework: Accel. Fundamentals of Computer Science 1 and 2, Accel. Discrete Strctures, Intensive Math Reasoning, Logic \& Computation
   \end{rItem}
 
   \begin{rItem}{Minnetonka High School}{Minnetonka, MN}{Sep. 2019}{Jun. 2024}
@@ -54,8 +54,18 @@
   \begin{rItem}{Research Assistant}{PRL-PRG}{Jan. 2024}{Sep. 2024}
     \item Collaborated on the development of a new infrastructure for just-in-time compilation of the R programming language
     \item Aided in transition from C++ to a Java compile server, focusing specifically on RDS serialization
-    \item After completion of RDS writer, integrated serialization system as a communication protocol between C++ frontend and
-    Java backend, enabling comprehensive integration testing via package compilation  \end{rItem}
+    \item After completion of RDS writer, integrated serialization system as a communication protocol between C++ frontend and Java backend, enabling comprehensive integration testing via package compilation
+
+    % ADDITIONAL NOTES
+    % RDS writer PR: https://github.com/PRL-PRG/r-compile-server/pull/16
+    % Integration test branch: https://github.com/PRL-PRG/r-compile-server/tree/backend-rds
+    %
+    % 1. Implemented serialization in the GNU R bytecode format, entailing a mapping from our bytecode to the GNU R standard, a compliant instruction serialization function, and cycle-aware constant pool serialization.
+    % 2. Added full support for R s-expressions, including closures, promises, environments, vectors, lists, symbols, and builtins.
+    % 3. Developed a comprehensive logging suite for debugging bytecode serialization and deserialization.
+    % 4. Created a roundtrip test utility which deserializes each function in the R standard library and serializes it back to RDS. Validates the RDS reader and writer by checking that the writer's output for each function matches the original RDS input.
+    % 5. Utilized RDS reader and writer to create integration tests for server-side bytecode compilation. For each, the C++ client sends a compilation request to the Java server, including a payload in the form of a standard R package (NAMESPACESXP). The server uses the RDS reader to parse the package, compiles it to bytecode, serializes that bytecode in the GNUR format using the RDS writer, and sends it back to the client. The client then checks whether the bytecode received from the server matches the output of the standard, client-side bytecode compiler. If they do not match, a diff is printed.
+  \end{rItem}
 
   % Minnetonka Research
   \begin{rItem}{Independent Researcher}{Minnetonka Research}{Sep. 2022}{May 2023}
