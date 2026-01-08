@@ -1,5 +1,8 @@
-indent.log
-resume.log
-resume.aux
 .auctex-auto/
 .direnv/
+*.aux
+*.log
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
