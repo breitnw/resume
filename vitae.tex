@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% +--------------------------------------------+
+% | PACKAGES AND OTHER DOCUMENT CONFIGURATIONS |
+% +--------------------------------------------+
+
+\documentclass{vitae} % Use the custom resume.cls style
+
+\usepackage[left=0.6in,top=0.5in,right=0.6in,bottom=0.5in]{geometry}
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Nicholas W. Breitling}
+\address{744 Applewood Cir., Victoria, MN 55386}
+\address{(+1) 952-905-4220 \\ breitnw@u.northwestern.edu}
+
+\begin{document}
+
+% +-------------------+
+% | EDUCATION SECTION |
+% +-------------------+
+
+\begin{rSection}{Education}
+  \begin{rItem}{Northwestern University}{\textit{Evanston, IL} $\cdot$ 4.0 GPA}{Sep. 2024}{Present}
+    \item Pursuing Bachelor of Science in Computer Science
+    \item Coursework: Programming Languages, Dynamics of Programming Languages, Proving Properties of Programs with Mechanized Logic, Intro to Type Systems, DSA, Computer Systems, Operating Systems
+    \item Awards and Honors: Tau Beta Pi Inductee, Summer Undergraduate Research Grant, High Honors Dean's List
+  \end{rItem}
+
+  \begin{rItem}{Northeastern University}{\textit{Boston, MA} $\cdot$ 4.0 GPA}{Sep. 2023}{Apr. 2024}
+    \item Coursework: Accel.\ Fundamentals of Computer Science 1 and 2, Accel.\ Discrete Structures, Intensive Math Reasoning, Logic \& Computation
+  \end{rItem}
+
+  % \begin{rItem}{Minnetonka High School}{Minnetonka, MN}{Sep. 2019}{Jun. 2024}
+  %   \item GPA: 4.615 (W), 4.0 (UW); ACT: 36
+  %   \item Coursework: AP CS A, AP CS Principles, Calculus 1-4, Linear Algebra
+  %   \item Awards: National Merit Scholarship Award, Dartmouth Alumni Club Book Award, AP Scholar with Distinction, Summa Cum Laude
+  % \end{rItem}
+\end{rSection}
+
+% +-----------------------+
+% | RESEARCH AND PROJECTS |
+% +-----------------------+
+
+\begin{rSection}{Research and projects}
+
+  % Northwestern trace-contracts research
+  \begin{rItem}{Programming Languages Research Intern}{Northwestern Univ., \it Evanston, IL}{Jan. 2025}{Present}
+    \item Awarded Summer Undergraduate Research Grant to design and conduct a Rational Programmer (RP) experiment investigating the pragmatics of software contracts in the context of testing
+    \item Investigate the space of strategies for replacing a tests with contracts while maintaining test suite effectiveness
+    \item Encode replacement strategies using rational programmers, autonomous agents that use input from language features (mutation score, code coverage, etc) to transform programs in a large program corpus. Implement RPs based on test suite reduction literature, in addition to dependency-based and random strategies
+    \item Design and implement infrastructure for large-scale experimentation, including efficient mutation score collection in an exponential configuration space
+    \item Evaluate RPs by performing mutation analysis on their resulting testing suites, providing actionable feedback on the programming strategies they embody
+  \end{rItem}
+
+  % PRL-PRG research
+  \begin{rItem}{Compilers Research Intern}{Czech Technical University, \it Prague, CZ}{Jan. 2024}{Sep. 2024}
+    \item Collaborated on the development of a new infrastructure for just-in-time compilation of R language
+    \item Aided in transition from C++ to Java compile server, focusing on RDS serializer implementation. Added full support for R s-expressions, including closures, promises, environments, vectors, lists, symbols, and builtins.
+    \item Implemented bytecode serialization in the GNU R bytecode format, entailing a mapping from our bytecode to the GNU R standard and cycle-aware constant pool serialization
+    \item Verified correctness with a roundtrip test utility, deserializing each function in the R standard library and serializing it back to RDS
+    \item Integrated serializer as a communication protocol between C++ frontend and Java backend
+    \item Constructed large-scale integration tests using new communication protocol, comparing server and client-side bytecode to expose numerous inconsistencies
+
+    % ADDITIONAL NOTES
+    % RDS writer PR: https://github.com/PRL-PRG/r-compile-server/pull/16
+    % Integration test branch: https://github.com/PRL-PRG/r-compile-server/tree/backend-rds
+    %
+    % 1. Implemented serialization in the GNU R bytecode format, entailing a mapping from our bytecode to the GNU R standard, a compliant instruction serialization function, and cycle-aware constant pool serialization.
+    % 2. Added full support for R s-expressions, including closures, promises, environments, vectors, lists, symbols, and builtins.
+    % 3. Developed a comprehensive logging suite for debugging bytecode serialization and deserialization.
+    % 4. Created a roundtrip test utility which deserializes each function in the R standard library and serializes it back to RDS. Validates the RDS reader and writer by checking that the writer's output for each function matches the original RDS input.
+    % 5. Utilized RDS reader and writer to create integration tests for server-side bytecode compilation. For each, the C++ client sends a compilation request to the Java server, including a payload in the form of a standard R package (NAMESPACESXP). The server uses the RDS reader to parse the package, compiles it to bytecode, serializes that bytecode in the GNUR format using the RDS writer, and sends it back to the client. The client then checks whether the bytecode received from the server matches the output of the standard, client-side bytecode compiler. If they do not match, a diff is printed.
+  \end{rItem}
+
+  % Minnetonka Research
+  \begin{rItem}{Student Researcher}{Minnetonka Research, \it Minnetonka, MN}{Sep. 2022}{May 2023}
+    \item Developed a new fluid rendering algorithm, utilizing ray-marching as a means of sphere blending
+    \item Using Vulkan and Rust, implemented both ray-marched and mesh-based fluid renderers, using the marching cubes algorithm for mesh generation
+    \item Experimentally compared algorithm performance, finding that ray-marching performed better than marching cubes in all benchmarks
+    \item Awarded blue ribbon (first place in Systems Software category), purple ribbon (advancement to State), and Stockholm Junior Water Prize at Twin Cities Regional Science Fair
+  \end{rItem}
+
+  % Other projects
+  {\bf Other projects} {\em (full list at github.com/breitnw)}
+  \begin{itemize}
+    \item \parbox{3cm}{\em mndco11age.xyz:} Portfolio website and webserver; developed with Rust and OpenSSL
+    \item \parbox{3cm}{\em rhyolite:} Vulkan-based mesh rendering engine, developed with Rust and GLSL
+    \item \parbox{3cm}{\em micromusic:} Apple Music miniplayer and queue manager, developed with Rust, C, and SDL2
+  \end{itemize}
+
+\end{rSection}
+
+% +------------------+
+% | OTHER EXPERIENCE |
+% +------------------+
+
+\begin{rSection}{Other experience}
+  % Peer Mentoring
+  \begin{rItem}{Peer Mentor}{Northwestern University, \it Evanston, IL}{Sep. 2025}{Present}
+    \item Host office hours (5 hours/week), mentoring students in COMP{\_}SCI 321: Programming Languages
+    \item Guide students through problems in interpreter and compiler implementation, building their understanding of course concepts as well as essential design patterns such as pattern matching and recursion
+    \item Meet weekly with course leadership to discuss and address student needs
+  \end{rItem}
+
+  % CodeNinjas
+  \begin{rItem}{Camp Counselor}{Code Ninjas, \it Chanhassen, MN}{Summers 2021}{2023}
+    \item Lead counselor for weekly camps throughout summer. Provided one-on-one and presentational instruction to guide campers through curriculum and difficult concepts related to programming and application development
+    \item Planned and implemented supplemental lessons in Lua and Scratch programming, 3D modeling, music distribution, and more, fostering an engaging environment for advanced campers
+  \end{rItem}
+
+  % Humanity Alliance volunteering
+  \begin{rItem}{Full-Stack Development Intern}{The Humanity Alliance, \it Victoria, MN}{May 2021}{May 2023}
+    \item Developed full-stack administration dashboard, aiding in delivery of meals to food-insecure families
+    \item Bridged meal request and route assignment APIs with an interactive map, greatly reducing manual entry time by automating route calculation and assignment
+    \item Used Python and Redis for data processing, Flask for web service, and Jinja for templating
+    \item Collaborated regularly with organization leadership to address needs for administration, user permissions and security
+  \end{rItem}
+\end{rSection}
+
+% +------------------+
+% | EXTRACURRICULARS |
+% +------------------+
+
+\begin{rSection}{Extracurriculars}
+  \begin{rItem}{Volunteer CS Educator}{Evanston-Skokie School District 65}{Jan. 2025}{Present}
+    \item Teach weekly computer science classes to 5th graders at Oakton Elementary School as part of education research conducted by Northwestern’s TIDAL and tiilt labs
+    \item Introduce students to concepts such as loops, variables, and debugging while fostering self-expression through use of TunePad, a Python-based music production tool
+  \end{rItem}
+
+  \begin{rItem}{Embedded Software Developer}{Northwestern Baja SAE}{Oct. 2024}{Present}
+    \item Implement platform-agnostic, immediate-mode GUI library in C, enabling users to compose and customize layouts using binary trees and functional programming idioms
+    \item Use said library to develop customizable heads-up display, informing driver of engine, fuel, and other metrics
+    \item Develop ESP32 microcontroller software for eCVT (electronic continuously-variable transmission) in C++, configuring and tuning hall-sensor and linear encoder PID inputs to maintain optimal output RPM
+  \end{rItem}
+
+  \begin{rItem}{Curriculum Developer}{StemOUT}{Jan. 2024}{Apr. 2024}
+    \item Developed an educational curriculum for elementary (K-5) schoolers with the goal of ``teaching AI without computers'', including interactive lessons on history, functions, and ethics. Taught this curriculum and others at public libraries.
+  \end{rItem}
+
+  \begin{rItem}{Captain}{FIRST Robotics Team 3082}{Sept. 2019}{May 2023}
+    \item Oversaw electronics and programming subteams; led the development of an OpenCV-based stereoscopic vision system, physically-modeled robot simulation, Swerve drivetrain, inverse-multiplexed button board, and other subsystems
+    \item Won Innovation in Control award, progressed to FRC World Championship during 2023 season
+  \end{rItem}
+
+  {\bf Other:} Scouts BSA, Eagle Rank; Tonka Hacks Hackathon, 1st place; NHS; Symphonic Band
+
+\end{rSection}
+
+% +----------------+
+% | SKILLS SECTION |
+% +----------------+
+
+\begin{rSection}{Skills}
+  {\bf Programming Languages and Frameworks }
+  \begin{itemize}
+    \item \parbox{3cm}{\em Functional:} Racket, Agda, Haskell, Nix, Emacs Lisp
+    \item \parbox{3cm}{\em Systems:} Rust, C, x86 Assembly, C++, GNU/Linux, Vulkan
+    \item \parbox{3cm}{\em General/Other:} Java, JavaScript, Python, Flask, Jinja, SQLite, Redis, \LaTeX
+  \end{itemize}
+\end{rSection}
+
+\end{document}
